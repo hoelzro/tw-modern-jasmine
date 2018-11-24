@@ -1,5 +1,7 @@
-title: $:/plugins/tiddlywiki/jasmine/readme
+title: $:/plugins/hoelzro/modern-jasmine/readme
 
 This plugin provides a framework for running tests in the browser and under Node.js. It is based on [[Jasmine|http://pivotal.github.io/jasmine/]] test framework.
 
-[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/jasmine]]
+This is a fork of the official Jasmine plugin, which currently uses Jasmine 1.3.1.  This plugin currently uses Jasmine 3.3.0.
+
+[[Source code|https://github.com/hoelzro/tw-modern-jasmine]]
