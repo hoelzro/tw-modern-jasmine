@@ -59,7 +59,14 @@ exports.startup = function() {
 		reporterExports = $tw.utils.evalSandboxed(code,context,reporterTitle);
 	// Link the reporter into jasmine
 	if($tw.browser) {
-		jasmineEnv.addReporter(new context.jasmineRequire.HtmlReporter());
+		context.jasmineRequire.html(jasmine);
+		var htmlReporter = new jasmine.HtmlReporter({
+			getContainer: function() { return document.body; },
+			createElement: document.createElement.bind(document),
+			createTextNode: document.createTextNode.bind(document),
+		});
+		jasmineEnv.addReporter(htmlReporter);
+		htmlReporter.initialize();
 	} else {
 		jasmineEnv.addReporter(new reporterExports.TerminalVerboseReporter());
 	}
