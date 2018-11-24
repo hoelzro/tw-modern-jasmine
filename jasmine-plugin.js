@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/hoelzro/modern-jasmine/jasmine-plugin.js
+title: $:/plugins/hoelzro/jasmine3/jasmine-plugin.js
 type: application/javascript
 module-type: startup
 
@@ -19,7 +19,7 @@ Startup function for running tests
 */
 exports.startup = function() {
 	// Get the Jasmine exports
-	var jasmine = $tw.modules.execute("$:/plugins/hoelzro/modern-jasmine/jasmine.js");
+	var jasmine = $tw.modules.execute("$:/plugins/hoelzro/jasmine3/jasmine.js");
 	jasmine = jasmine.core(jasmine);
 	// Prepare the Jasmine environment
 	var initialContext = {
@@ -51,7 +51,7 @@ exports.startup = function() {
 	var context = $tw.utils.extend({},jasmineEnv,initialContext);
 	jasmineEnv.updateInterval = 1000;
 	// Execute the appropriate reporter
-	var reporterTitle = $tw.browser ? "$:/plugins/hoelzro/modern-jasmine/jasmine-html.js" : "$:/plugins/hoelzro/modern-jasmine/reporter.js";
+	var reporterTitle = $tw.browser ? "$:/plugins/hoelzro/jasmine3/jasmine-html.js" : "$:/plugins/hoelzro/jasmine3/reporter.js";
 	context.require = function(moduleTitle) {
 		return $tw.modules.execute(moduleTitle,reporterTitle);
 	};

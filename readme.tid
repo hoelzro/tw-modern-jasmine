@@ -1,4 +1,4 @@
-title: $:/plugins/hoelzro/modern-jasmine/readme
+title: $:/plugins/hoelzro/jasmine3/readme
 
 This plugin provides a framework for running tests in the browser and under Node.js. It is based on [[Jasmine|http://pivotal.github.io/jasmine/]] test framework.
 
