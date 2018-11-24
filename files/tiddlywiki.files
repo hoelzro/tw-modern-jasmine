@@ -1,7 +1,7 @@
 {
 	"tiddlers": [
 		{
-			"file": "jasmine-html.js",
+			"file": "../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js",
 			"fields": {
 				"type": "application/javascript",
 				"title": "$:/plugins/tiddlywiki/jasmine/jasmine-html.js",
@@ -9,14 +9,14 @@
 				"global-module": "true"
 			}
 		},{
-			"file": "jasmine.css",
+			"file": "../node_modules/jasmine-core/lib/jasmine-core/jasmine.css",
 			"fields": {
 				"type": "text/css",
 				"title": "$:/plugins/tiddlywiki/jasmine/jasmine.css",
 				"tags": "[[$:/tags/Stylesheet]]"
 			}
 		},{
-			"file": "jasmine.js",
+			"file": "../node_modules/jasmine-core/lib/jasmine-core/jasmine.js",
 			"fields": {
 				"type": "application/javascript",
 				"title": "$:/plugins/tiddlywiki/jasmine/jasmine.js",
