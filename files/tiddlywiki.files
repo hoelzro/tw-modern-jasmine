@@ -4,7 +4,7 @@
 			"file": "../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js",
 			"fields": {
 				"type": "application/javascript",
-				"title": "$:/plugins/tiddlywiki/jasmine/jasmine-html.js",
+				"title": "$:/plugins/hoelzro/modern-jasmine/jasmine-html.js",
 				"module-type": "library",
 				"global-module": "true"
 			}
@@ -12,14 +12,14 @@
 			"file": "../node_modules/jasmine-core/lib/jasmine-core/jasmine.css",
 			"fields": {
 				"type": "text/css",
-				"title": "$:/plugins/tiddlywiki/jasmine/jasmine.css",
+				"title": "$:/plugins/hoelzro/modern-jasmine/jasmine.css",
 				"tags": "[[$:/tags/Stylesheet]]"
 			}
 		},{
 			"file": "../node_modules/jasmine-core/lib/jasmine-core/jasmine.js",
 			"fields": {
 				"type": "application/javascript",
-				"title": "$:/plugins/tiddlywiki/jasmine/jasmine.js",
+				"title": "$:/plugins/hoelzro/modern-jasmine/jasmine.js",
 				"module-type": "library"
 			},
 			"prefix": "var window = undefined; /* Prepended to the main jasmine source file to force it into commonjs mode */\n"
@@ -27,7 +27,7 @@
 			"file": "reporter.js",
 			"fields": {
 				"type": "application/javascript",
-				"title": "$:/plugins/tiddlywiki/jasmine/reporter.js",
+				"title": "$:/plugins/hoelzro/modern-jasmine/reporter.js",
 				"module-type": "library"
 			}
 		}

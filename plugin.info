@@ -1,7 +1,7 @@
 {
-	"title": "$:/plugins/tiddlywiki/jasmine",
+	"title": "$:/plugins/hoelzro/modern-jasmine",
 	"description": "Jasmine: testing framework",
-	"author": "JeremyRuston",
+	"author": "Rob Hoelz",
 	"core-version": ">=5.0.0",
 	"list": "readme"
 }

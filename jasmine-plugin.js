@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/tiddlywiki/jasmine/jasmine-plugin.js
+title: $:/plugins/hoelzro/modern-jasmine/jasmine-plugin.js
 type: application/javascript
 module-type: startup
 
@@ -19,7 +19,7 @@ Startup function for running tests
 */
 exports.startup = function() {
 	// Get the Jasmine exports
-	var jasmine = $tw.modules.execute("$:/plugins/tiddlywiki/jasmine/jasmine.js");
+	var jasmine = $tw.modules.execute("$:/plugins/hoelzro/modern-jasmine/jasmine.js");
 	// Add our other context variables
 	var context = $tw.utils.extend({},jasmine,{
 			console: console,
@@ -34,7 +34,7 @@ exports.startup = function() {
 	var jasmineEnv = jasmine.jasmine.getEnv();
 	jasmineEnv.updateInterval = 1000;
 	// Execute the appropriate reporter
-	var reporterTitle = $tw.browser ? "$:/plugins/tiddlywiki/jasmine/jasmine-html.js" : "$:/plugins/tiddlywiki/jasmine/reporter.js";
+	var reporterTitle = $tw.browser ? "$:/plugins/hoelzro/modern-jasmine/jasmine-html.js" : "$:/plugins/hoelzro/modern-jasmine/reporter.js";
 	context.require = function(moduleTitle) {
 		return $tw.modules.execute(moduleTitle,reporterTitle);
 	};
