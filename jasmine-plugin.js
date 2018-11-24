@@ -42,15 +42,12 @@ exports.startup = function() {
 	context.require = function(moduleTitle) {
 		return $tw.modules.execute(moduleTitle,reporterTitle);
 	};
+	context.jasmineRequire = {};
 	var code = $tw.wiki.getTiddlerText(reporterTitle,""),
 		reporterExports = $tw.utils.evalSandboxed(code,context,reporterTitle);
 	// Link the reporter into jasmine
 	if($tw.browser) {
-		var htmlReporter = new jasmine.jasmine.HtmlReporter();
-		jasmineEnv.addReporter(htmlReporter);
-		jasmineEnv.specFilter = function(spec) {
-			return htmlReporter.specFilter(spec);
-		};
+		jasmineEnv.addReporter(new context.jasmineRequire.HtmlReporter());
 	} else {
 		jasmineEnv.addReporter(new reporterExports.TerminalVerboseReporter());
 	}
