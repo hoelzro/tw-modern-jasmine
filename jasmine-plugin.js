@@ -52,14 +52,7 @@ exports.startup = function() {
 			return htmlReporter.specFilter(spec);
 		};
 	} else {
-		// The HTMLReporter links itself into the jasmine object automatically, but we have to manually add the node reporter
-		jasmine.jasmine.TerminalVerboseReporter = reporterExports.jasmineNode.TerminalVerboseReporter;
-		jasmine.jasmine.TerminalReporter = reporterExports.jasmineNode.TerminalReporter;
-		jasmineEnv.addReporter(new jasmine.jasmine.TerminalVerboseReporter({
-			print: require("util").print,
-			color: true,
-			includeStackTrace: true
-		}));
+		jasmineEnv.addReporter(new reporterExports.TerminalVerboseReporter());
 	}
 	// Iterate through all the test modules
 	var tests = $tw.wiki.filterTiddlers(TEST_TIDDLER_FILTER);
