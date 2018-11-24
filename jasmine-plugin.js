@@ -24,13 +24,25 @@ exports.startup = function() {
 	// Prepare the Jasmine environment
 	var initialContext = {
 		console: console,
-		setInterval: setInterval,
-		clearInterval: clearInterval,
-		setTimeout: setTimeout,
-		clearTimeout: clearTimeout,
 		exports: {},
 		$tw: $tw
 	};
+
+	if($tw.browser) {
+		$tw.utils.extend(initialContext, {
+			setInterval: setInterval.bind(window),
+			clearInterval: clearInterval.bind(window),
+			setTimeout: setTimeout.bind(window),
+			clearTimeout: clearTimeout.bind(window)
+		});
+	} else {
+		$tw.utils.extend(initialContext, {
+			setInterval: setInterval,
+			clearInterval: clearInterval,
+			setTimeout: setTimeout,
+			clearTimeout: clearTimeout
+		});
+	}
 	var jasmineEnv = jasmine.getEnv({
 		global: initialContext
 	});
