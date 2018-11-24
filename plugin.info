@@ -3,5 +3,6 @@
 	"description": "Jasmine: testing framework (version 3.3.0)",
 	"author": "Rob Hoelz",
 	"core-version": ">=5.0.0",
-	"list": "readme"
+	"list": "readme",
+	"version": "1.0.0"
 }
