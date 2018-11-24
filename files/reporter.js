@@ -49,6 +49,10 @@
   };
 
   exports.TerminalVerboseReporter.prototype.specDone = function(result) {
+    if(result.status != 'passed' && result.status != 'failed') {
+      return;
+    }
+
     var didPass = result.status == 'passed';
 
     this.testCount++;
