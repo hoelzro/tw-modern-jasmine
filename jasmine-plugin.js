@@ -46,6 +46,7 @@ exports.startup = function() {
 	var jasmineEnv = jasmine.getEnv({
 		global: initialContext
 	});
+	jasmineEnv.randomizeTests(false);
 	// Add our other context variables
 	var context = $tw.utils.extend({},jasmineEnv,initialContext);
 	jasmineEnv.updateInterval = 1000;
