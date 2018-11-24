@@ -20,18 +20,22 @@ Startup function for running tests
 exports.startup = function() {
 	// Get the Jasmine exports
 	var jasmine = $tw.modules.execute("$:/plugins/hoelzro/modern-jasmine/jasmine.js");
-	// Add our other context variables
-	var context = $tw.utils.extend({},jasmine,{
-			console: console,
-			setInterval: setInterval,
-			clearInterval: clearInterval,
-			setTimeout: setTimeout,
-			clearTimeout: clearTimeout,
-			exports: {},
-			$tw: $tw
-	});
+	jasmine = jasmine.core(jasmine);
 	// Prepare the Jasmine environment
-	var jasmineEnv = jasmine.jasmine.getEnv();
+	var initialContext = {
+		console: console,
+		setInterval: setInterval,
+		clearInterval: clearInterval,
+		setTimeout: setTimeout,
+		clearTimeout: clearTimeout,
+		exports: {},
+		$tw: $tw
+	};
+	var jasmineEnv = jasmine.getEnv({
+		global: initialContext
+	});
+	// Add our other context variables
+	var context = $tw.utils.extend({},jasmineEnv,initialContext);
 	jasmineEnv.updateInterval = 1000;
 	// Execute the appropriate reporter
 	var reporterTitle = $tw.browser ? "$:/plugins/hoelzro/modern-jasmine/jasmine-html.js" : "$:/plugins/hoelzro/modern-jasmine/reporter.js";
