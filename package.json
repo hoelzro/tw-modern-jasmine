@@ -3,5 +3,8 @@
   "version": "3.3.0",
   "description": "TiddlyWiki plugin for modern Jasmine",
   "author": "Rob Hoelz",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jasmine-core": "^3.3.0"
+  }
 }
