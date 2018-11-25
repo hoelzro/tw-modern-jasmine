@@ -51,7 +51,6 @@ exports.startup = function() {
 	});
 	// Add our other context variables
 	var context = $tw.utils.extend({},jasmineEnv,initialContext);
-	jasmineEnv.updateInterval = 1000;
 	// Execute the appropriate reporter
 	var reporterTitle = $tw.browser ? "$:/plugins/hoelzro/jasmine3/jasmine-html.js" : "$:/plugins/hoelzro/jasmine3/reporter.js";
 	context.require = function(moduleTitle) {
