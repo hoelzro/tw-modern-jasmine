@@ -19,8 +19,8 @@ Startup function for running tests
 */
 exports.startup = function() {
 	// Get the Jasmine exports
-	var jasmine = $tw.modules.execute("$:/plugins/hoelzro/jasmine3/jasmine.js");
-	jasmine = jasmine.core(jasmine);
+	var jasmineRequire = $tw.modules.execute("$:/plugins/hoelzro/jasmine3/jasmine.js");
+	var jasmine = jasmineRequire.core(jasmineRequire);
 	// Prepare the Jasmine environment
 	var initialContext = {
 		console: console,
@@ -49,8 +49,9 @@ exports.startup = function() {
 	jasmineEnv.configure({
 		random: false
 	});
+	var jasmineInterface = jasmineRequire.interface(jasmine, jasmineEnv);
 	// Add our other context variables
-	var context = $tw.utils.extend({},jasmineEnv,initialContext);
+	var context = $tw.utils.extend({},jasmineInterface,initialContext);
 	// Execute the appropriate reporter
 	var reporterTitle = $tw.browser ? "$:/plugins/hoelzro/jasmine3/jasmine-html.js" : "$:/plugins/hoelzro/jasmine3/reporter.js";
 	context.require = function(moduleTitle) {
